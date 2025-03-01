@@ -45,7 +45,7 @@ public class UserAccount extends BaseEntity implements UserDetails {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private UserRole role = UserRole.ROLE_KARYAWAN;
+    private UserRole role;
     
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

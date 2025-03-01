@@ -35,7 +35,8 @@ public class AuthServiceImpl implements AuthService {
                 request.getLast_name(),
                 request.getEmail(),
                 request.getPassword(),
-                UserRole.ROLE_KARYAWAN);
+                UserRole.ROLE_KARYAWAN
+        );
         
         UserAccount savedUserAccount = userAccountService.createUserAccount(userAccount); 
         
@@ -79,7 +80,7 @@ public class AuthServiceImpl implements AuthService {
                 .first_name(userAccount.getFirst_name())
                 .last_name(userAccount.getLast_name())
                 .email(userAccount.getEmail())
-                .role(String.valueOf(userAccount.getRole()))
+                .role(userAccount.getRole())
                 .build();
     }
 }

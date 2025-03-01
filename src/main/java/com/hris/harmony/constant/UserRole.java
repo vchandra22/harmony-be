@@ -5,10 +5,14 @@ public enum UserRole {
     ROLE_SUPERVISON("SUPERVISOR"),
     ROLE_FINANCE("FINANCE"),
     ROLE_ADMIN("ADMIN");
-    private String value;
+    private final String value;
     
     UserRole(String value) {
         this.value = value;
+    }
+    
+    public String getValue() {
+        return value;
     }
     
     public static UserRole fromValue(String value) {
