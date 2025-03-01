@@ -8,7 +8,6 @@ public class HarmonyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HarmonyApplication.class, args);
-        System.out.println("Hello World!!!");
     }
 
 }
