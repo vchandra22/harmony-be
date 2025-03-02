@@ -14,6 +14,9 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class EmployeeRequest {
+    private String first_name;
+    private String last_name;
+    private String email;
     private String phone;
     private String birth_place;
     private Date birth_date;

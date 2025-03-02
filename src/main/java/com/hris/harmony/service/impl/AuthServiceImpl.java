@@ -38,9 +38,6 @@ public class AuthServiceImpl implements AuthService {
         
         UserAccount userAccount = toUserAccount(
                 request.getUsername(),
-                request.getFirst_name(),
-                request.getLast_name(),
-                request.getEmail(),
                 request.getPassword(),
                 UserRole.ROLE_KARYAWAN
         );
@@ -48,6 +45,9 @@ public class AuthServiceImpl implements AuthService {
         UserAccount savedUserAccount = userAccountService.createUserAccount(userAccount);
         
         employeeService.createEmployee(EmployeeRequest.builder()
+                .first_name(request.getFirst_name())
+                .last_name(request.getLast_name())
+                .email(request.getEmail())
                 .phone(request.getPhone())
                 .birth_place(request.getBirth_place())
                 .birth_date(request.getBirth_date())
@@ -80,20 +80,14 @@ public class AuthServiceImpl implements AuthService {
 
         return AuthResponse.builder()
                 .username(userAccount.getUsername())
-                .first_name(userAccount.getFirst_name())
-                .last_name(userAccount.getLast_name())
-                .email(userAccount.getEmail())
                 .token(generatedToken)
                 .role(userAccount.getRole())
                 .build();
     }
     
-    private UserAccount toUserAccount(String username, String first_name, String last_name, String email, String password, UserRole role) {
+    private UserAccount toUserAccount(String username, String password, UserRole role) {
         return UserAccount.builder()
                 .username(username)
-                .first_name(first_name)
-                .last_name(last_name)
-                .email(email)
                 .password(passwordEncoder.encode(password))
                 .role(role)
                 .build();
@@ -102,9 +96,6 @@ public class AuthServiceImpl implements AuthService {
     private RegisterUserAccountResponse toRegisterUserAccountResponse(UserAccount userAccount) {
         return RegisterUserAccountResponse.builder()
                 .username(userAccount.getUsername())
-                .first_name(userAccount.getFirst_name())
-                .last_name(userAccount.getLast_name())
-                .email(userAccount.getEmail())
                 .role(userAccount.getRole())
                 .build();
     }

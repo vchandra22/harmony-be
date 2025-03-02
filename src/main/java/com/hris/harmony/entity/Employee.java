@@ -20,8 +20,17 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
+
+    @Column(name = "first_name")
+    private String first_name;
+
+    @Column(name = "last_name")
+    private String last_name;
+
+    @Column(name = "email")
+    private String email;
     
-    @Column(name = "phone", nullable = false, unique = true)
+    @Column(name = "phone")
     private String phone;
     
     @Column(name = "birth_place")

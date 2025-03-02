@@ -19,7 +19,6 @@ import java.io.IOException;
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
     private final ObjectMapper objectMapper;
 
-
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         CommonResponse<?> commonResponse = new CommonResponse<>(HttpStatus.FORBIDDEN.value(), accessDeniedException.getMessage(), null);

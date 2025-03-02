@@ -19,7 +19,6 @@ import java.io.IOException;
 public class CustomAuthEntryPoint implements AuthenticationEntryPoint {
     private final ObjectMapper objectMapper;
 
-
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
 

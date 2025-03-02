@@ -1,7 +1,11 @@
 package com.hris.harmony.dto.response;
 
 import com.hris.harmony.constant.UserRole;
+import com.hris.harmony.entity.UserAccount;
 import lombok.*;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -9,9 +13,6 @@ import lombok.*;
 @Builder
 public class RegisterUserAccountResponse {
     private String username;
-    private String first_name;
-    private String last_name;
-    private String email;
     private UserRole role;
     
     public String getRole() {
