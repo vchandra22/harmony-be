@@ -41,7 +41,6 @@ public class JwtServiceImpl implements JwtService {
                     .withSubject(String.valueOf(userAccount.getId()))
                     .withIssuedAt(Instant.now())
                     .withExpiresAt(Instant.now().plusSeconds(JWT_EXPIRATION))
-                    .withClaim("roles", userAccount.getAuthorities().stream().map((role) -> role.getAuthority()).toList())
                     .withIssuer(ISSUER)
                     .sign(algorithm);
         } catch (JWTCreationException exception) {
@@ -82,6 +81,4 @@ public class JwtServiceImpl implements JwtService {
             return null;
         }
     }
-    
-    
 }
