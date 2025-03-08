@@ -7,7 +7,7 @@ import com.hris.harmony.entity.Employee;
 import java.util.List;
 
 public interface EmployeeService {
-    EmployeeRequest createEmployee(EmployeeRequest employeeRequest);
+    EmployeeResponse createEmployee(EmployeeRequest employeeRequest);
     List<EmployeeResponse> getAllEmployees();
     EmployeeResponse getEmployeeById(String employeeId);
     Employee getOne(String id);

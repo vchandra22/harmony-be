@@ -8,6 +8,7 @@ public class Constant {
     // table
     public static final String USER_TABLE = "m_user";
     public static final String EMPLOYEE_TABLE = "m_employee";
+    public static final String POSITION_TABLE = "m_position";
     
     // message
     public static final String SUCCESS_LOGIN = "Login Successfully!";

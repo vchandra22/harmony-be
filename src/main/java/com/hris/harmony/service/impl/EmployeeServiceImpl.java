@@ -6,7 +6,6 @@ import com.hris.harmony.entity.Employee;
 import com.hris.harmony.repository.EmployeeRepository;
 import com.hris.harmony.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     @Override
-    public EmployeeRequest createEmployee(EmployeeRequest employeeRequest) {
+    public EmployeeResponse createEmployee(EmployeeRequest employeeRequest) {
         Employee employee = Employee.builder()
                 .first_name(employeeRequest.getFirst_name())
                 .last_name(employeeRequest.getLast_name())
@@ -32,9 +31,9 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .userAccount(employeeRequest.getUserAccount())
                 .build();
 
-        employeeRepository.saveAndFlush(employee);
-        
-        return null;
+        employee = employeeRepository.saveAndFlush(employee);
+
+        return toEmployeeResponse(employee);
     }
 
     @Override

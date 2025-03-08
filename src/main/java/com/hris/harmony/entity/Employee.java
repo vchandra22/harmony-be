@@ -51,4 +51,8 @@ public class Employee {
     @OneToOne
     @JoinColumn(name = "user_account_id")
     private UserAccount userAccount;
+    
+    @ManyToOne
+    @JoinColumn(name = "position_id")
+    private Position position;
 }
