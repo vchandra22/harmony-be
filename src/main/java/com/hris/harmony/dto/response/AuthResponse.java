@@ -12,8 +12,4 @@ public class AuthResponse {
     private String username;
     private UserRole role;
     private String token;
-
-    public String getRole() {
-        return role != null ? role.getValue() : null;
-    }
 }

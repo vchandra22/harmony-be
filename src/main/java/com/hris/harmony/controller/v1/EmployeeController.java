@@ -5,6 +5,7 @@ import com.hris.harmony.dto.request.EmployeeRequest;
 import com.hris.harmony.dto.response.EmployeeResponse;
 import com.hris.harmony.service.EmployeeService;
 import com.hris.harmony.util.ResponseUtil;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +34,7 @@ public class EmployeeController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateEmployee(@PathVariable String id, @RequestBody EmployeeRequest employeeRequest) {
+    public ResponseEntity<?> updateEmployee(@PathVariable String id, @Valid @RequestBody EmployeeRequest employeeRequest) {
         EmployeeResponse employeeResponse = employeeService.updateEmployee(id, employeeRequest);
         
         return ResponseUtil.buildResponse(HttpStatus.OK, Constant.SUCCESS_UPDATE_EMPLOYEE, employeeResponse);

@@ -3,6 +3,9 @@ package com.hris.harmony.entity;
 import com.hris.harmony.constant.Constant;
 import com.hris.harmony.constant.UserRole;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,14 +31,19 @@ public class UserAccount extends BaseEntity implements UserDetails {
     @Column(name = "id", nullable = false)
     private String id;
 
+    @NotBlank(message = "Username is required")
+    @Size(min = 5, max = 20, message = "Username must be between 5 and 20 characters")
     @Column(unique = true, nullable = false, length = 20)
     private String username;
-    
+
+    @NotBlank(message = "Password is required")
+    @Size(min = 8, message = "Password must be at least 8 characters long")
     @Column(nullable = false)
     private String password;
-    
+
+    @NotNull(message = "Role is required")
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
+    @Column(name = "role", nullable = false)
     private UserRole role;
     
     @Override

@@ -14,8 +14,4 @@ import java.util.Date;
 public class RegisterUserAccountResponse {
     private String username;
     private UserRole role;
-    
-    public String getRole() {
-        return role != null ? role.getValue() : null;
-    }
 }

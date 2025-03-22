@@ -8,6 +8,7 @@ import com.hris.harmony.dto.response.RegisterUserAccountResponse;
 import com.hris.harmony.service.AuthService;
 import com.hris.harmony.util.ResponseUtil;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ public class AuthController {
     private final AuthService authService;
     
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody RegisterUserAccountRequest request) {
+    public ResponseEntity<?> register(@Valid @RequestBody RegisterUserAccountRequest request) {
         RegisterUserAccountResponse response = authService.registerUserAccount(request);
 
         return ResponseUtil.buildResponse(HttpStatus.CREATED, Constant.SUCCESS_REGISTER, response);
