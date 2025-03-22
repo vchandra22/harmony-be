@@ -36,7 +36,7 @@ public class PositionController {
         
         Page<PositionResponse> positionPage = positionService.getAllPositions(searchPositionRequest);
         
-        return ResponseUtil.buildResponse(HttpStatus.OK, Constant.SUCCESS_GET_ALL_POSITION, positionPage);
+        return ResponseUtil.buildPageResponse(HttpStatus.OK, Constant.SUCCESS_GET_ALL_POSITION, positionPage);
     }
     
     @GetMapping("/{id}")
