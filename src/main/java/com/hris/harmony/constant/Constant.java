@@ -5,11 +5,13 @@ public class Constant {
     public static final String AUTH_API = "api/v1/auth";
     public static final String EMPLOYEE_API = "api/v1/employee";
     public static final String POSITION_API = "api/v1/positions";
+    public static final String DEPARTMENT_API = "api/v1/departments";
     
     // table
     public static final String USER_TABLE = "m_user";
     public static final String EMPLOYEE_TABLE = "m_employee";
     public static final String POSITION_TABLE = "m_position";
+    public static final String DEPARTMENT_TABLE = "m_department";
     
     // message
     public static final String SUCCESS_LOGIN = "Login Successfully!";
@@ -26,4 +28,10 @@ public class Constant {
     public static final String SUCCESS_UPDATE_POSITION = "Update Position Successfully!";
     public static final String SUCCESS_GET_POSITION_BY_ID = "Get Position By Id Successfully!";
     public static final String SUCCESS_DELETE_POSITION = "Delete Position Successfully!";
+
+    public static final String SUCCESS_GET_ALL_DEPARTMENT = "Get All Departments Successfully!";
+    public static final String SUCCESS_GET_DEPARTMENT_BY_ID = "Get Department By Id Successfully!";
+    public static final String SUCCESS_CREATE_DEPARTMENT = "Create Department Successfully!";
+    public static final String SUCCESS_UPDATE_DEPARTMENT = "Update Department Successfully!";
+    public static final String SUCCESS_DELETE_DEPARTMENT = "Delete Department Successfully!";
 }
