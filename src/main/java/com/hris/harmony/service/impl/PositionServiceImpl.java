@@ -77,7 +77,7 @@ public class PositionServiceImpl implements PositionService {
 
     private PositionResponse toPositionResponse(Position position) {
         PositionResponse positionResponse = new PositionResponse();
-
+        
         positionResponse.setId(position.getId());
         positionResponse.setName(position.getName());
 
