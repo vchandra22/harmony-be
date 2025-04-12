@@ -8,6 +8,9 @@ public class Constant {
     public static final String DEPARTMENT_API = "api/v1/departments";
     public static final String ANNOUNCEMENT_API = "api/v1/announcements";
     
+    public static final String ATTENDANCE_API = "api/v1/attendances";
+    
+    
     
     // table
     public static final String USER_TABLE = "m_user";
@@ -15,6 +18,8 @@ public class Constant {
     public static final String POSITION_TABLE = "m_position";
     public static final String DEPARTMENT_TABLE = "m_department";
     public static final String ANNOUNCEMENT_TABLE = "m_announcement";
+    public static final String ATTENDANCE_TABLE = "m_attendance";
+    
     
     // message
     public static final String SUCCESS_LOGIN = "Login Successfully!";
@@ -42,4 +47,8 @@ public class Constant {
     public static final String SUCCESS_CREATE_ANNOUNCEMENT = "Create Announcement Successfully!";
     public static final String SUCCESS_UPDATE_ANNOUNCEMENT = "Update Announcement Successfully!";
     public static final String SUCCESS_DELETE_ANNOUNCEMENT = "Delete Announcement Successfully!";
+    public static final String SUCCESS_GET_ALL_ATTENDANCE = "Get All Attendances Successfully!";
+    public static final String SUCCESS_CREATE_ATTENDANCE = "Create Attendance Successfully!";
+    public static final String SUCCESS_UPDATE_ATTENDANCE = "Update Attendance Successfully!";
+    public static final String SUCCESS_DELETE_ATTENDANCE = "Delete Attendance Successfully!";
 }
