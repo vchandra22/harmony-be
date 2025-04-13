@@ -29,8 +29,14 @@ public class Attendance {
     @Column(name = "check_out")
     private LocalDateTime checkOut;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false)
+    private Employee employeeId;
+
     @PrePersist
-    public void prePersist(){
-        this.attendanceDate = LocalDateTime.now();
+    public void prePersist() {
+        if (this.attendanceDate == null) {
+            this.attendanceDate = LocalDateTime.now();
+        }
     }
 }

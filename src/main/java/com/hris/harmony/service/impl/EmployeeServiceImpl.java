@@ -3,6 +3,7 @@ package com.hris.harmony.service.impl;
 import com.hris.harmony.dto.request.EmployeeRequest;
 import com.hris.harmony.dto.response.EmployeeResponse;
 import com.hris.harmony.entity.Employee;
+import com.hris.harmony.entity.Position;
 import com.hris.harmony.repository.EmployeeRepository;
 import com.hris.harmony.service.EmployeeService;
 import lombok.RequiredArgsConstructor;

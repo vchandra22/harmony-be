@@ -43,6 +43,13 @@ public class AttendanceController {
         return ResponseUtil.buildPageResponse(HttpStatus.OK, Constant.SUCCESS_GET_ALL_ATTENDANCE, attendanceResponsePage);
     }
     
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getAttendanceById(@PathVariable("id") String id) {
+        AttendanceResponse attendanceResponse = attendanceService.getAttendanceById(id);
+        
+        return ResponseUtil.buildResponse(HttpStatus.OK, Constant.SUCCESS_GET_ATTENDANCE_BY_ID, attendanceResponse);
+    }
+    
     @PostMapping
     public ResponseEntity<?> createAttendance(@RequestBody @Valid AttendanceRequest attendanceRequest) {
         AttendanceResponse attendanceResponse = attendanceService.createAttendance(attendanceRequest);
@@ -51,7 +58,7 @@ public class AttendanceController {
     }
     
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateAttendance(@PathVariable String id, @Valid AttendanceRequest attendanceRequest) {
+    public ResponseEntity<?> updateAttendance(@PathVariable String id, @RequestBody @Valid AttendanceRequest attendanceRequest) {
         AttendanceResponse attendanceResponse = attendanceService.updateAttendance(id, attendanceRequest);
         
         return ResponseUtil.buildResponse(HttpStatus.OK, Constant.SUCCESS_UPDATE_ATTENDANCE, attendanceResponse);

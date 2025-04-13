@@ -51,4 +51,5 @@ public class Constant {
     public static final String SUCCESS_CREATE_ATTENDANCE = "Create Attendance Successfully!";
     public static final String SUCCESS_UPDATE_ATTENDANCE = "Update Attendance Successfully!";
     public static final String SUCCESS_DELETE_ATTENDANCE = "Delete Attendance Successfully!";
+    public static final String SUCCESS_GET_ATTENDANCE_BY_ID = "Get Attendance By Id Successfully!";
 }

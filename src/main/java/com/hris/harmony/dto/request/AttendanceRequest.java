@@ -15,4 +15,5 @@ public class AttendanceRequest {
     private LocalDateTime attendanceDate;
     private LocalDateTime checkIn;
     private LocalDateTime checkOut;
+    private String employeeId;
 }
